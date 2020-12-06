@@ -1,0 +1,18 @@
+toucthis is max lee's blog.
+simple and useless ,justlike any other project he has coded.
+however he also wish that one day his code may help somebody.
+anybody.
+
+url:
+---/                         (mainpage)
+ |-/administer               (where to post new blog)
+ |-/recommendation           (where people give lee recommendation)
+ |-/<blogid>                 (detail or everything about a blog)
+
+the functions need to be realized:
+0.1:
+
+1.lee can post his blogs on the website ,using client not the code
+2.everybody can see what this guy has posted
+3.people can give their recommendations to lee so he may realized them in the near future.
+4.there can be an important blog at the toppest part of mainpage
