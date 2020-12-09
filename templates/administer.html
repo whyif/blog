@@ -1,10 +1,53 @@
 <!DOCTYPE html>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
-    <h1>i'm administer</h1>
-</body>
+    i'm body2 {{test}}
+    <div id="app">
+        <p>{{greetvue}}</p>
+        <p>{{greeting}}</p>
+        <!-- <p v-on:onclick="getdata">[[user]]</p> -->
+    </div>
+</body>   
+<script>
+
+    // var app=new Vue({
+    //     el:'#app',
+    //     delimiters:['[[',']]'],
+    //     data:{
+    //         message:'baby!',
+    //         user:[],
+    //     }, 
+    //     methods: {
+    //         getdata(){
+    //             axios.get('http:/127.0.0.1:5000/administer_data').then((response)=>{
+    //                 this.user=response.body
+    //                 console.log(this.user)
+    //             })
+
+    //         }
+            
+    //     },
+    //})
+    var app=new Vue({
+        el:'#app',
+        data:function(){
+            return {
+                greetvue:'greeting from vue',
+                greeting:''
+            }
+        },
+        created: async function() {
+            const getres=await fetch('http://127.0.0.1:5000/administer_data')
+            const getobj=await getres.json()
+            this.greeting=getobj.greeting
+        },
+    })
+</script>
+
 </html>

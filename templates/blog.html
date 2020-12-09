@@ -1,10 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
-    <h1>i'm blog</h1>
+    <div id="test">
+        [[renderblog]]
+        <p v-if="renderblog">a blog is rendered</p>
+        <p v-else>sorry we can't render this blog</p>
+        <button v-on:click="not">click me</button>
+    </div>
+    {{normaldata}}
+    {{list[0].context}}
+    {% for item in blog %}
+        <div>
+            type:{{item.type}}
+            context:{{item.context}}
+        </div>
+    {% endfor %}
 </body>
+<script>
+    var test = new Vue({
+        el:'#test',
+        delimiters:['[[',']]'],
+        data:{
+            renderblog:true,
+        },
+        methods: {
+            not:function(){
+                this.renderblog=!this.renderblog
+            }
+        },
+    })
+</script>
+
 </html>
