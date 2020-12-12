@@ -11,29 +11,9 @@
     <div id="app">
         <p>{{greetvue}}</p>
         <p>{{greeting}}</p>
-        <!-- <p v-on:onclick="getdata">[[user]]</p> -->
     </div>
 </body>   
 <script>
-
-    // var app=new Vue({
-    //     el:'#app',
-    //     delimiters:['[[',']]'],
-    //     data:{
-    //         message:'baby!',
-    //         user:[],
-    //     }, 
-    //     methods: {
-    //         getdata(){
-    //             axios.get('http:/127.0.0.1:5000/administer_data').then((response)=>{
-    //                 this.user=response.body
-    //                 console.log(this.user)
-    //             })
-
-    //         }
-            
-    //     },
-    //})
     var app=new Vue({
         el:'#app',
         data:function(){
